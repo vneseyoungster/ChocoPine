@@ -38,7 +38,7 @@ This is the game-changer: **different phases use separate context windows via sp
 Simply clone this repository:
 
 ```bash
-git clone https://github.com/vneseyoungster/Vibe-Starter-Pack.git
+git clone https://github.com/vneseyoungster/ChocoPine.git
 ```
 
 ## How to Use It
