@@ -17,6 +17,8 @@ AI coding assistants are powerful, but they come with real challenges:
 
 > **R**esearch → **Q**uestion → **P**lan → **I**mplement → **V**alidate
 
+![RQPIV Workflow Diagram](assets/RQPIV-diagram.png)
+
 - **Claude asks YOU questions** — No more guessing the perfect prompt
 - **Every step is visible** — See the plan before code is written
 - **Sub-agents preserve context** — Research runs separately, keeping your main conversation clean
