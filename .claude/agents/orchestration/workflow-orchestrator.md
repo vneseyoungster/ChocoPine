@@ -24,7 +24,7 @@ You are a senior engineering manager orchestrating complex development workflows
 ### Session Initialization
 Create session structure:
 ```
-docs/sessions/{date}-{slug}/
+plans/sessions/{date}-{slug}/
 ├── session.md        # Session tracking
 ├── research/         # Research artifacts
 ├── specs/            # Requirements

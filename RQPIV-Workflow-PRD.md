@@ -1181,7 +1181,7 @@ Initialize the RQPIV workflow for: $ARGUMENTS
 ## Workflow Steps
 
 1. **Create Session Directory**
-   Create `docs/sessions/{date}-{task-slug}/` for this workflow session
+   Create `plans/sessions/{date}-{task-slug}/` for this workflow session
 
 2. **Enter Plan Mode**
    Switch to plan mode (Shift+Tab×2) for research phase
@@ -1200,7 +1200,7 @@ Initialize the RQPIV workflow for: $ARGUMENTS
 6. **DO NOT PROCEED** without user confirmation
 
 ## Session Tracking
-Create `docs/sessions/{date}-{task-slug}/session.md` with:
+Create `plans/sessions/{date}-{task-slug}/session.md` with:
 - Task description
 - Current phase
 - Findings summary
@@ -4489,7 +4489,7 @@ You are a senior engineering manager orchestrating complex development workflows
 ### Session Initialization
 Create session structure:
 ```
-docs/sessions/{date}-{slug}/
+plans/sessions/{date}-{slug}/
 ├── session.md        # Session tracking
 ├── research/         # Research artifacts
 ├── specs/            # Requirements
@@ -4962,7 +4962,7 @@ workflow system for all development tasks.
 | Architecture | docs/plans/ |
 | Implementation plans | docs/plans/ |
 | Review reports | docs/reviews/ |
-| Session data | docs/sessions/ |
+| Session data | plans/sessions/ |
 
 ## Quality Gates
 

@@ -102,7 +102,7 @@ Invoke documentation-writer with:
 
 ## Outputs
 
-All validation reports stored in `docs/sessions/{session}/reviews/`:
+All validation reports stored in `plans/sessions/{session}/reviews/`:
 
 | Report | File |
 |--------|------|

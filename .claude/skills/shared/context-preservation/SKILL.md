@@ -77,9 +77,9 @@ Examples:
 
 | Artifact Type | Location |
 |---------------|----------|
-| Handoffs | `docs/sessions/{session}/` |
-| Progress | `docs/sessions/{session}/` |
-| Resume | `docs/sessions/{session}/` |
+| Handoffs | `plans/sessions/{session}/` |
+| Progress | `plans/sessions/{session}/` |
+| Resume | `plans/sessions/{session}/` |
 
 ## Best Practices
 

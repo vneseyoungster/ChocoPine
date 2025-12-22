@@ -1,76 +1,89 @@
-# Project Context for Claude Code
+# Claude Code Instruction
 
 ## RQPIV Workflow System
 
 This project uses the RQPIV (Research, Question, Plan, Implement, Validate)
 workflow system for all development tasks.
 
-### Quick Start
+**⚠️ CRITICAL: All workflow execution MUST be done through slash commands. Never execute workflow phases manually - always use the commands defined in `.claude/commands/`.**
 
+## Command-Driven Architecture
+
+### Command Location
 ```
-/start [feature description]
-```
-
-This command orchestrates the full workflow automatically.
-
-### Manual Phase Execution
-
-```
-/research [task]         # Research, question, and plan
-/execute [task]          # Implementation phase
-/code-check [task]       # Validation phase
+.claude/commands/     # All workflow commands
+.claude/agents/       # All sub-agent definitions
 ```
 
-## Sub-Agent Reference
+### Available Commands
+
+| Command | Location | Purpose |
+|---------|----------|---------|
+| `/start` | `.claude/commands/start.md` | Execute full workflow (R→Q→P→I→V) |
+| `/research` | `.claude/commands/research.md` | Research, question, and plan phases |
+| `/execute` | `.claude/commands/execute.md` | Implementation phase |
+| `/code-check` | `.claude/commands/code-check.md` | Validation phase |
+
+### Usage
+
+```bash
+/start [feature description]      # Full automated workflow
+/research [task]                  # Research + Question + Plan
+/execute [task]                   # Implementation only
+/code-check [task]                # Validation only
+```
+
+## Workflow Enforcement Rules
+
+1. **NEVER** execute workflow phases directly in the main context
+2. **ALWAYS** invoke the appropriate slash command to start any workflow
+3. **ALWAYS** delegate research tasks to sub-agents defined in `.claude/agents/`
+4. **NEVER** skip the command layer - commands contain critical orchestration logic
+
+## Sub-Agent Definitions
+
+All agents are defined in `.claude/agents/` directory:
 
 ### Research Agents (Phase R)
-
-| Agent | Purpose | Model |
-|-------|---------|-------|
-| `codebase-explorer` | Project structure mapping | haiku |
-| `module-researcher` | Deep module analysis | sonnet |
-| `frontend-researcher` | Frontend architecture | sonnet |
-| `backend-researcher` | Backend architecture | sonnet |
-| `dependency-researcher` | Package analysis | haiku |
-| `pattern-researcher` | Convention detection | sonnet |
+| Agent File | Purpose | Model |
+|------------|---------|-------|
+| `codebase-explorer.md` | Project structure mapping | haiku |
+| `module-researcher.md` | Deep module analysis | sonnet |
+| `frontend-researcher.md` | Frontend architecture | sonnet |
+| `backend-researcher.md` | Backend architecture | sonnet |
+| `dependency-researcher.md` | Package analysis | haiku |
+| `pattern-researcher.md` | Convention detection | sonnet |
 
 ### Questioning Agents (Phase Q)
-
-| Agent | Purpose | Model |
-|-------|---------|-------|
-| `requirement-analyst` | Requirement validation | opus |
+| Agent File | Purpose | Model |
+|------------|---------|-------|
+| `requirement-analyst.md` | Requirement validation | opus |
 
 ### Planning Agents (Phase P)
-
-| Agent | Purpose | Model |
-|-------|---------|-------|
-| `solution-architect` | Architecture design | opus |
-| `task-planner` | Task breakdown | sonnet |
+| Agent File | Purpose | Model |
+|------------|---------|-------|
+| `solution-architect.md` | Architecture design | opus |
+| `task-planner.md` | Task breakdown | sonnet |
 
 ### Implementation Agents (Phase I)
-
-| Agent | Purpose | Model |
-|-------|---------|-------|
-| `backend-developer` | Server-side code | sonnet |
-| `frontend-developer` | Client-side code | sonnet |
-| `database-specialist` | Database operations | sonnet |
+| Agent File | Purpose | Model |
+|------------|---------|-------|
+| `backend-developer.md` | Server-side code | sonnet |
+| `frontend-developer.md` | Client-side code | sonnet |
+| `database-specialist.md` | Database operations | sonnet |
 
 ### Validation Agents (Phase V)
-
-| Agent | Purpose | Model |
-|-------|---------|-------|
-| `code-reviewer` | Code quality | inherit |
-| `test-automator` | Test creation | sonnet |
-| `security-auditor` | Security review | sonnet |
-| `documentation-writer` | Documentation | haiku |
+| Agent File | Purpose | Model |
+|------------|---------|-------|
+| `code-reviewer.md` | Code quality | inherit |
+| `test-automator.md` | Test creation | sonnet |
+| `security-auditor.md` | Security review | sonnet |
+| `documentation-writer.md` | Documentation | haiku |
 
 ### Orchestration
-
-| Agent | Purpose | Model |
-|-------|---------|-------|
-| `workflow-orchestrator` | Phase coordination | opus |
-
-**IMPORTANT:** NEVER do extensive research in main context - always delegate to sub-agents to preserve context window.
+| Agent File | Purpose | Model |
+|------------|---------|-------|
+| `workflow-orchestrator.md` | Phase coordination | opus |
 
 ## Artifact Locations
 
@@ -81,7 +94,7 @@ This command orchestrates the full workflow automatically.
 | Architecture | `docs/plans/` |
 | Implementation plans | `docs/plans/` |
 | Review reports | `docs/reviews/` |
-| Session data | `docs/sessions/` |
+| Session data | `plans/sessions/` |
 
 ## Quality Gates
 
@@ -102,23 +115,31 @@ This command orchestrates the full workflow automatically.
 - Security audit passed (no critical vulnerabilities)
 - Documentation updated
 
-## Slash Commands
-
-| Command | Purpose |
-|---------|---------|
-| `/start` | Execute full workflow (research → execute → validate) |
-| `/research` | Research codebase, ask questions, create approved plan |
-| `/execute` | Execute implementation from approved plan |
-| `/code-check` | Run code review, tests, security audit |
-
 ## Best Practices
 
-1. **Context Preservation**: Use sub-agents for research to keep main context clean
-2. **Documentation**: Store all findings in appropriate `docs/` directories
-3. **User Confirmation**: Never skip questioning phase - always clarify requirements
-4. **Plan Adherence**: Follow approved plans exactly, document any deviations
-5. **Quality First**: Never skip validation phase
-6. **Session Tracking**: Use session directories for complex features
+1. **Command-First**: Always start with a slash command - never bypass the command layer
+2. **Context Preservation**: Commands delegate to sub-agents to keep main context clean
+3. **Documentation**: Store all findings in appropriate `docs/` directories
+4. **User Confirmation**: Never skip questioning phase - always clarify requirements
+5. **Plan Adherence**: Follow approved plans exactly, document any deviations
+6. **Quality First**: Never skip validation phase
+7. **Session Tracking**: Use session directories for complex features
+
+## When User Requests Development Work
+
+**DO THIS:**
+```
+User: "Add a new login feature"
+→ Respond: "I'll start the RQPIV workflow for this feature."
+→ Execute: /start Add a new login feature
+```
+
+**DON'T DO THIS:**
+```
+User: "Add a new login feature"
+→ Start researching the codebase directly
+→ Start implementing without using commands
+```
 
 ## Project-Specific Information
 

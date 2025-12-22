@@ -12,7 +12,7 @@ This command combines research, questioning, and planning into a single flow. It
 
 ### Create Session Directory
 ```
-docs/sessions/{date}-{task-slug}/
+plans/sessions/{date}-{task-slug}/
 ├── session.md        # Session tracking
 ├── research/         # Research findings
 ├── specs/            # Requirements
@@ -73,9 +73,9 @@ Select appropriate researchers based on task type:
 ### Research Outputs
 
 Store findings in session directory:
-- `docs/sessions/{session}/research/codebase-map.md`
-- `docs/sessions/{session}/research/patterns.md`
-- `docs/sessions/{session}/research/dependencies.md`
+- `plans/sessions/{session}/research/codebase-map.md`
+- `plans/sessions/{session}/research/patterns.md`
+- `plans/sessions/{session}/research/dependencies.md`
 
 ### Research Summary
 
@@ -134,7 +134,7 @@ Check for:
 
 ### Generate Requirements Document
 
-Create `docs/sessions/{session}/specs/requirements.md`:
+Create `plans/sessions/{session}/specs/requirements.md`:
 - Functional requirements (with IDs)
 - Non-functional requirements (with IDs)
 - Acceptance criteria (testable)
@@ -169,7 +169,7 @@ Delegate to `solution-architect` sub-agent to:
 - Identify risks and mitigation strategies
 - Create architecture document
 
-**Output:** `docs/sessions/{session}/plans/architecture.md`
+**Output:** `plans/sessions/{session}/plans/architecture.md`
 
 ### Present Architecture for Review
 
@@ -189,7 +189,7 @@ Delegate to `solution-architect` sub-agent to:
 [Any questions needing user input]
 
 ---
-Full architecture document: docs/sessions/{session}/plans/architecture.md
+Full architecture document: plans/sessions/{session}/plans/architecture.md
 ```
 
 ### Architecture Approval Gate
@@ -215,7 +215,7 @@ After architecture approval, delegate to `task-planner` sub-agent to:
 - Define verification for each task
 - Establish dependencies and order
 
-**Output:** `docs/sessions/{session}/plans/implementation.md`
+**Output:** `plans/sessions/{session}/plans/implementation.md`
 
 ### Present Implementation Plan
 
@@ -239,7 +239,7 @@ After architecture approval, delegate to `task-planner` sub-agent to:
 [Key commands that will be run]
 
 ---
-Full implementation plan: docs/sessions/{session}/plans/implementation.md
+Full implementation plan: plans/sessions/{session}/plans/implementation.md
 ```
 
 ### Plan Approval Gate

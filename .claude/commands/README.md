@@ -39,7 +39,7 @@ Slash commands are invoked by typing `/command-name` in Claude Code.
 
 **Session Artifacts Created:**
 ```
-docs/sessions/{date}-{slug}/
+plans/sessions/{date}-{slug}/
 ├── session.md        # Session tracking
 ├── research/         # Research findings
 ├── specs/            # Requirements
@@ -67,10 +67,10 @@ Combines research, questioning, and planning into one phase:
 ```
 
 **Output:**
-- `docs/sessions/{session}/research/` - Research findings
-- `docs/sessions/{session}/specs/requirements.md` - Requirements
-- `docs/sessions/{session}/plans/architecture.md` - Architecture
-- `docs/sessions/{session}/plans/implementation.md` - Task breakdown
+- `plans/sessions/{session}/research/` - Research findings
+- `plans/sessions/{session}/specs/requirements.md` - Requirements
+- `plans/sessions/{session}/plans/architecture.md` - Architecture
+- `plans/sessions/{session}/plans/implementation.md` - Task breakdown
 
 **Quality Gates:**
 - All blocking questions answered
@@ -144,11 +144,11 @@ Executes the validation phase:
 | Documentation | `documentation-writer` |
 
 **Output:**
-- `docs/sessions/{session}/reviews/code-review.md`
-- `docs/sessions/{session}/reviews/test-report.md`
-- `docs/sessions/{session}/reviews/security-audit.md`
-- `docs/sessions/{session}/reviews/documentation.md`
-- `docs/sessions/{session}/reviews/final-validation.md`
+- `plans/sessions/{session}/reviews/code-review.md`
+- `plans/sessions/{session}/reviews/test-report.md`
+- `plans/sessions/{session}/reviews/security-audit.md`
+- `plans/sessions/{session}/reviews/documentation.md`
+- `plans/sessions/{session}/reviews/final-validation.md`
 
 **Final Status:**
 - READY FOR MERGE - All validations pass

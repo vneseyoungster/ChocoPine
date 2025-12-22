@@ -37,7 +37,7 @@ Orchestration agents coordinate multi-phase RQPIV workflows, managing transition
 The orchestrator creates and maintains session directories:
 
 ```
-docs/sessions/{date}-{slug}/
+plans/sessions/{date}-{slug}/
 ├── session.md        # Session tracking file
 ├── research/         # Research artifacts
 ├── specs/            # Requirements documents
