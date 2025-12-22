@@ -6,12 +6,12 @@ Execute implementation plan for: $ARGUMENTS
 - [ ] Research phase completed (`/research`)
 - [ ] Architecture approved
 - [ ] Implementation plan approved
-- [ ] Plan document in `docs/sessions/{session}/plans/`
+- [ ] Plan document in `plans/sessions/{session}/plans/`
 
 ## Execution Steps
 
 1. **Load Implementation Plan**
-   Read: `docs/sessions/{session}/plans/implementation.md`
+   Read: `plans/sessions/{session}/plans/implementation.md`
 
 2. **Switch to Auto-Accept Mode**
    Enter Shift+Tab to enable auto-accept
@@ -98,7 +98,7 @@ For each task in the implementation plan:
 
 ### 2. Check Patterns
 Before implementing, review:
-- `docs/sessions/{session}/research/patterns.md` for coding conventions
+- `plans/sessions/{session}/research/patterns.md` for coding conventions
 - Similar implementations in codebase
 - Skill references for best practices
 
@@ -163,7 +163,7 @@ If plan cannot be followed exactly:
 
 ## Progress Tracking
 
-Update `docs/sessions/{session}/session.md` after each task:
+Update `plans/sessions/{session}/session.md` after each task:
 
 ```markdown
 ## Implementation Progress

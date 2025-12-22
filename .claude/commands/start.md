@@ -12,7 +12,7 @@ This command orchestrates the full Research → Question → Plan → Execute �
 
 Create session directory structure:
 ```
-docs/sessions/{date}-{slug}/
+plans/sessions/{date}-{slug}/
 ├── session.md        # Session tracking
 ├── research/         # Research artifacts
 ├── specs/            # Requirements
@@ -147,10 +147,10 @@ All workflow artifacts are preserved:
 
 | Artifact | Location |
 |----------|----------|
-| Session tracking | `docs/sessions/{session}/session.md` |
-| Research findings | `docs/sessions/{session}/research/` |
-| Requirements | `docs/sessions/{session}/specs/` |
-| Architecture | `docs/sessions/{session}/plans/` |
-| Implementation plan | `docs/sessions/{session}/plans/` |
-| Review reports | `docs/sessions/{session}/reviews/` |
-| Final summary | `docs/sessions/{session}/summary.md` |
+| Session tracking | `plans/sessions/{session}/session.md` |
+| Research findings | `plans/sessions/{session}/research/` |
+| Requirements | `plans/sessions/{session}/specs/` |
+| Architecture | `plans/sessions/{session}/plans/` |
+| Implementation plan | `plans/sessions/{session}/plans/` |
+| Review reports | `plans/sessions/{session}/reviews/` |
+| Final summary | `plans/sessions/{session}/summary.md` |
